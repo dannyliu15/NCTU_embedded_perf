@@ -12,6 +12,16 @@ int main(void)
 #elif defined(MATRIX)
     static int array[10000][10000] = {0};
     matrix(10000,10000,array);
+#elif defined(BRANCH)
+    int size = 1000000;
+    int src1[1000000];
+    int src2[1000000];
+    int dst[2000000];
+    for (int i = 0; i < size; i++) {
+        src1[i] = (rand() % 1000)+1;
+        src2[i] = (rand() % 1000)+1;
+    }
+    merge(src1, src2, dst, size);
 
 #endif
     return 0;
