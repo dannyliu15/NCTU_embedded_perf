@@ -13,13 +13,13 @@ int main(void)
     static int array[10000][10000] = {0};
     matrix(10000,10000,array);
 #elif defined(BRANCH)
-    int size = 1000000;
-    int src1[1000000];
-    int src2[1000000];
-    int dst[2000000];
+    int size = 10000;
+    int src1[10000];
+    int src2[10000];
+    int dst[20000];
     for (int i = 0; i < size; i++) {
-        src1[i] = (rand() % 1000)+1;
-        src2[i] = (rand() % 1000)+1;
+        src1[i] = (rand() % 10)+10*i;
+        src2[i] = (rand() % 10)+10*i;
     }
     merge(src1, src2, dst, size);
 
